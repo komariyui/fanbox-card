@@ -1,0 +1,19 @@
+html,body{
+    padding:0px;
+    margin:0px;
+
+    height:100%;
+}
+.main-box{
+    width:100%;
+    height:100%;
+
+    display: grid;
+
+    align-content: center;
+}
+.pink-button{
+    background-color:pink;
+    color:white;
+    display: initial;
+}
