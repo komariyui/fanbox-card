@@ -10,10 +10,19 @@ html,body{
 
     display: grid;
 
+    justify-content: center;
     align-content: center;
 }
 .pink-button{
-    background-color:pink;
+    border-radius:190px;
     color:white;
     display: initial;
+    padding: 20px 40px 20px 40px;
+    background-image: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+    cursor: pointer;
+    opacity:1;
+    transition: opacity 0.3s;
+}
+.pink-button:hover{
+    opacity: 0.8;
 }
