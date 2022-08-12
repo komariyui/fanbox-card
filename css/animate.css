@@ -1,0 +1,13 @@
+.fadeIn{
+    opacity: 0;
+    animation: fadeIn 0.3s;
+    animation-fill-mode:forwards;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
+}
