@@ -20,6 +20,49 @@ window.onload = function (){
         // console.log(((event.clientY-coreY)/coreY)*21);
         let x = (event.clientX-coreX)/coreX;
         let y = (event.clientY-coreY)/coreY;
-        document.getElementById("main-shadow-image").style.transform = `perspective(${x+600}px) rotateX(${y*21}deg) rotateY(${(x*18)>0?-(x*18):Math.abs(x*18)}deg) `
+        document.getElementById("main-shadow-image").style.transform = `perspective(${x+1600}px) rotateX(${y*21}deg) rotateY(${(x*18)>0?-(x*18):Math.abs(x*18)}deg) `
     })
+
+    const mainImg = document.getElementById("mainShadowImage").getContext('2d');
+    let newMainImg =  new Image();
+    newMainImg.src = "../images/card-image.jpeg";
+    mainImg.globalCompositeOperation = "destination-over";
+    newMainImg.onload = async function (){
+        await mainImg.drawImage(newMainImg,0,0,1280,800);
+    }
+
+
+
+    // const cnv = document.getElementById('mainShadowBackground');
+    // const cnw = cnv.getContext('2d')
+    //
+    //
+    //
+    //
+    //
+    // let img = new Image()
+    // img.src = "../images/color-x.png" //颜色
+    // img.onload = async function () {
+    //     await cnw.drawImage(img,0, 0,1280,800);
+    //     cnw.globalCompositeOperation = "destination-out";
+    //
+    // }
+    //
+    // let img2 = new Image()
+    // img2.src = "../images/mosaic-1.png" //格子
+    // img2.onload = function (){
+    //     cnw.drawImage(img2,0, 0,1280,800);
+    //
+    // }
+
+
+
+
+
+
+    // cnw.globalCompositeOperation = "screen";
+    // cnw.globalCompositeOperation = "destination-atop";
+    //destination-atop有雏形
+
+
 }
