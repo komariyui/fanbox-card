@@ -38,18 +38,18 @@ window.onload = function (){
 
 
 
-    // let img2 = new Image()
-    // img2.src = "../images/mosaic-1.png" //格子
-    // img2.onload = async function (){
-    //     await cnw.drawImage(img2,0, 0,1280,800);
-    // }
+    let img2 = new Image()
+    img2.src = "../images/mosaic-1.png" //格子
+    img2.onload = async function (){
+        await cnw.drawImage(img2,0, 0,1280,800);
+    }
 
-    // let img = new Image()
-    // img.src = "../images/color-y.png" //颜色
-    // img.onload = async function () {
-    //     await cnw.drawImage(img,0, 0,1280,800);
-    //     cnw.globalCompositeOperation = "destination-in";  //保留source-in
-    // }
+    let img = new Image()
+    img.src = "../images/color-y.png" //颜色
+    img.onload = async function () {
+        await cnw.drawImage(img,0, 0,12800,8000);
+        cnw.globalCompositeOperation = "destination-in";  //保留source-in
+    }
 
     // img.ontouchmove = function(e){
     //     // e.preventDefault();
