@@ -24,5 +24,7 @@
 ### License
 
 <Hr/>
+MIT
+<br/>
 Copyright (c) 2022-present 由白子
 
