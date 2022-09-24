@@ -10,15 +10,17 @@
 
 <hr/>
 
-```js
+```html
  <div id="useBox"></div>
  <script src="./js/classMain.js"></script>
+ <script>
     window.onload = function (){
             const fanBoxCardFun = new fanBoxCard({
                 entry:"useBox",
                 image:"./images/card-image.jpeg"
             })
         }
+ </script>
 ```
 
 ### License
