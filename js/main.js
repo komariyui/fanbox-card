@@ -38,11 +38,12 @@ window.onload = function (){
 /*----------图Y*/
     let img = new Image()
     let img2 = new Image()
-    imgDraw();
     const cnv = document.getElementById('mainShadowBackground');
     const cnw = cnv.getContext('2d')
+    imgDraw();
 
-   function imgDraw(){
+
+    function imgDraw(){
        img.src = "../images/color-y.png" //颜色
        img.onload = async function () {
            // console.log("颜色加载完成")
@@ -59,6 +60,8 @@ window.onload = function (){
 
 
     function restDraw(x,y){
+        let img = new Image()
+        let img2 = new Image()
         const tempCanvas = document.createElement('canvas'); // 缓存 canvas
         const tempCtx = tempCanvas.getContext('2d');
         tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
@@ -68,7 +71,8 @@ window.onload = function (){
         img.src = "../images/color-y.png" //颜色
         img.onload = async function () {
             // console.log("颜色加载完成")
-            await tempCtx.drawImage(img,-500+x*600, -500+y*600,6280,3800);
+
+            await tempCtx.drawImage(img,-800+x*600, -800+y*600,6280,3800);
             tempCtx.globalCompositeOperation = "destination-in";
             img2.src = "../images/mosaic-1.png" //格子
             img2.onload =function (){
@@ -115,8 +119,7 @@ window.onload = function (){
         img.src = "../images/color-x.png" //颜色
         img.onload = async function () {
             // console.log("颜色加载完成")
-            console.log(x+"}}"+y)
-            await tempCtx.drawImage(img,-500+x*600, -500+y*600,6280,3800);
+            await tempCtx.drawImage(img,-800+x*600, -800+y*600,6280,3800);
             tempCtx.globalCompositeOperation = "destination-in";
             img2.src = "../images/mosaic-2.png" //格子
             img2.onload =function (){
