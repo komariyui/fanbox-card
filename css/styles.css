@@ -47,8 +47,9 @@ html,body{
     width: 40vw;
     height: auto;
     position: relative;
-    z-index: 14;
+    /*z-index: 14;*/
     filter: brightness(93%);
+
 }
 /*.main-shadow-scatter{*/
 /*        border-radius: 10px;*/
@@ -89,7 +90,7 @@ html,body{
 #mainShadowBackground{
     border-radius: 10px;
     position: absolute;
-    z-index: 999;
+    /*z-index: 999;*/
     top:0px;
     height: 0px;
     width: 40vw;
@@ -99,7 +100,7 @@ html,body{
 #mainShadowBackground-1{
     border-radius: 10px;
     position: absolute;
-    z-index: 999;
+    /*z-index: 999;*/
     top:0px;
     height: 0px;
     width: 40vw;

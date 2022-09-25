@@ -13,7 +13,6 @@ window.onload = function (){
 
     const coreX = document.getElementById("CardMainBox").offsetWidth/2;
     const coreY = document.getElementById("CardMainBox").offsetHeight/2;
-
     document.getElementById("CardMainBox").addEventListener("mousemove",(event)=>{
         // console.log(event.clientX-coreX)
         // console.log(event.clientY-coreY)
@@ -23,7 +22,7 @@ window.onload = function (){
         let y = (event.clientY-coreY)/coreY;
         restDraw(x,y);
         restDraw2(x,y);
-        document.getElementById("main-shadow-image").style.transform = `perspective(${x+1600}px) rotateX(${y*21}deg) rotateY(${(x*18)>0?-(x*18):Math.abs(x*18)}deg) `
+        document.getElementById("main-shadow-image").style.transform = `perspective(${1600}px) rotateX(${y*21}deg) rotateY(${(x*18)>0?-(x*18):Math.abs(x*18)}deg) `
 
     })
 
@@ -35,19 +34,20 @@ window.onload = function (){
         await mainImg.drawImage(newMainImg,0,0,1280,800);
     }
 
+
 /*----------图Y*/
     let img = new Image()
     let img2 = new Image()
     const cnv = document.getElementById('mainShadowBackground');
     const cnw = cnv.getContext('2d')
-    imgDraw();
+    // imgDraw();
 
 
     function imgDraw(){
        img.src = "../images/color-y.png" //颜色
        img.onload = async function () {
            // console.log("颜色加载完成")
-           await cnw.drawImage(img,0, 0,6280,3800);
+           await cnw.drawImage(img,-800, -800,6280,3800);
            cnw.globalCompositeOperation = "destination-in";  //保留source-in
            img2.src = "../images/mosaic-1.png" //格子
            img2.onload = async function (){
@@ -91,15 +91,15 @@ window.onload = function (){
     let img4 = new Image()
     const cnv1 = document.getElementById('mainShadowBackground-1');
     const cnw2 = cnv1.getContext('2d')
-    imgDraw2();
+    // imgDraw2();
 
     function imgDraw2(){
-        img3.src = "../images/color-y.png" //颜色
+        img3.src = "../images/color-x.png" //颜色
         img3.onload = async function () {
             // console.log("颜色加载完成")
-            await cnw2.drawImage(img,0, 0,6280,3800);
+            await cnw2.drawImage(img,-800, -800,6280,3800);
             cnw2.globalCompositeOperation = "destination-in";  //保留source-in
-            img4.src = "../images/mosaic-1.png" //格子
+            img4.src = "../images/mosaic-2.png" //格子
             img4.onload = async function (){
                 // console.log("格子加载完成")
                 await cnw2.drawImage(img2,0, 0,1280,800);
@@ -132,7 +132,8 @@ window.onload = function (){
         }
 
     };
-
+    restDraw(0,0);
+    restDraw2(0,0);
     //无双缓存
     // function restDraw(x,y){
     //    // render();
