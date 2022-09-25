@@ -50,6 +50,42 @@ html,body{
     z-index: 14;
     filter: brightness(93%);
 }
+/*.main-shadow-scatter{*/
+/*        border-radius: 10px;*/
+/*        position: absolute;*/
+/*        z-index: 999;*/
+/*        top:0px;*/
+/*        height: 0px;*/
+/*        width: 40vw;*/
+/*        height: auto;*/
+/*    mix-blend-mode:screen;*/
+
+/*}*/
+/*.main-shadow-color{*/
+/*    border-radius: 10px;*/
+/*    position: absolute;*/
+/*    z-index: 999;*/
+/*    top:0px;*/
+/*    height: 0px;*/
+/*    width: 40vw;*/
+/*    height: auto;*/
+
+/*}*/
+/*.main-shadow-mask{*/
+/*    border-radius: 10px;*/
+/*    position: absolute;*/
+/*    z-index: 999;*/
+/*    top:0px;*/
+/*    height: 700px !important;*/
+/*    width: 40vw;*/
+/*    height: auto;*/
+/*    mix-blend-mode:screen;*/
+/*    background-attachment: fixed;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: 100% auto;*/
+/*    background-image: url("../images/color-y.png");*/
+/*    -webkit-mask: url("../images/mosaic-1.png");*/
+/*}*/
 #mainShadowBackground{
     border-radius: 10px;
     position: absolute;
@@ -58,4 +94,5 @@ html,body{
     height: 0px;
     width: 40vw;
     height: auto;
+    mix-blend-mode:screen;
 }
