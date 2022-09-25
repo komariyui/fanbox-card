@@ -45,7 +45,7 @@ window.onload = function (){
        img.src = "../images/color-y.png" //颜色
        img.onload = async function () {
            // console.log("颜色加载完成")
-           await cnw.drawImage(img,0, 0,3280,1800);
+           await cnw.drawImage(img,0, 0,6280,3800);
            cnw.globalCompositeOperation = "destination-in";  //保留source-in
            img2.src = "../images/mosaic-1.png" //格子
            img2.onload = async function (){
@@ -55,36 +55,74 @@ window.onload = function (){
        }
    }
 
-   function restDraw(x,y){
+
+
+    function restDraw(x,y){
+        const tempCanvas = document.createElement('canvas'); // 缓存 canvas
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
+        // render();
         // console.log("被调用")
-       // console.log(cnv.height);
-       // cnw.width = cnw.width;
-       cnw.clearRect(0,0,cnv.width,cnv.height);
-       // cnw.fillStyle = "#FFF"
-           // imgDraw()
-       // console.log(img)
-       // cnw.drawImage(img,0, 0,3280,1800);
-       // cnw.globalCompositeOperation = "destination-in";
-       // cnw.drawImage(img2,0, 0,1280,800);
-       // console.log(img2)
-       cnw.globalCompositeOperation = "source-over"
-       img.src = "../images/color-y.png" //颜色
-       img.onload = async function () {
-           // console.log("颜色加载完成")
-           await cnw.drawImage(img,-500+x*300, -500+y*300,3280,1800);
-           cnw.globalCompositeOperation = "destination-in";
-           // console.log()
-           //
-           img2.src = "../images/mosaic-1.png" //格子
-           img2.onload =function (){
-               // console.log("格子加载完成")
-               cnw.drawImage(img2,0, 0,1280,800);
-               // cnw.globalCompositeOperation = "destination-in";  //保留source-in
+        // console.log(cnv.height);
+        // cnw.width = cnw.width;
+        // cnw.fillStyle = "#FFF"
+        // imgDraw()
+        // console.log(img)
+        // cnw.drawImage(img,0, 0,3280,1800);
+        // cnw.globalCompositeOperation = "destination-in";
+        // cnw.drawImage(img2,0, 0,1280,800);
+        // console.log(img2)
+        cnw.globalCompositeOperation = "source-over"
+        img.src = "../images/color-y.png" //颜色
+        img.onload = async function () {
+            // console.log("颜色加载完成")
+            await tempCtx.drawImage(img,-500+x*600, -500+y*600,6280,3800);
+            tempCtx.globalCompositeOperation = "destination-in";
+            img2.src = "../images/mosaic-1.png" //格子
+            img2.onload =function (){
+                // console.log("格子加载完成")
+                tempCtx.drawImage(img2,0, 0,1280,800);
+                cnw.clearRect(0,0,cnv.width,cnv.height);
+                cnw.drawImage(tempCanvas,0,0);
+            }
 
-           }
+        }
 
-       }
-   }
+    };
+    //无双缓存
+    // function restDraw(x,y){
+    //    // render();
+    //     // console.log("被调用")
+    //    // console.log(cnv.height);
+    //    // cnw.width = cnw.width;
+    //    cnw.clearRect(0,0,cnv.width,cnv.height);
+    //    // cnw.fillStyle = "#FFF"
+    //        // imgDraw()
+    //    // console.log(img)
+    //    // cnw.drawImage(img,0, 0,3280,1800);
+    //    // cnw.globalCompositeOperation = "destination-in";
+    //    // cnw.drawImage(img2,0, 0,1280,800);
+    //    // console.log(img2)
+    //    cnw.globalCompositeOperation = "source-over"
+    //    img.src = "../images/color-y.png" //颜色
+    //    img.onload = async function () {
+    //        // console.log("颜色加载完成")
+    //        await cnw.drawImage(img,-500+x*600, -500+y*600,6280,3800);
+    //        cnw.globalCompositeOperation = "destination-in";
+    //        // console.log()
+    //        //
+    //        img2.src = "../images/mosaic-1.png" //格子
+    //        img2.onload =function (){
+    //            // console.log("格子加载完成")
+    //            cnw.drawImage(img2,0, 0,1280,800);
+    //            // cnw.globalCompositeOperation = "destination-in";  //保留source-in
+    //
+    //        }
+    //
+    //
+    //    }
+    // };
+
 
 
 
