@@ -96,3 +96,13 @@ html,body{
     height: auto;
     mix-blend-mode:screen;
 }
+#mainShadowBackground-1{
+    border-radius: 10px;
+    position: absolute;
+    z-index: 999;
+    top:0px;
+    height: 0px;
+    width: 40vw;
+    height: auto;
+    mix-blend-mode:screen;
+}
