@@ -62,7 +62,7 @@ window.onload = function (){
     function restDraw(x,y){
         let img = new Image()
         let img2 = new Image()
-        const tempCanvas = document.createElement('canvas'); // 缓存 canvas
+        const tempCanvas = document.createElement('canvas'); // Storage canvas
         const tempCtx = tempCanvas.getContext('2d');
         tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
 
@@ -110,7 +110,7 @@ window.onload = function (){
 
 
     function restDraw2(x,y){
-        const tempCanvas = document.createElement('canvas'); // 缓存 canvas
+        const tempCanvas = document.createElement('canvas'); //Storage canvas
         const tempCtx = tempCanvas.getContext('2d');
         tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
 
