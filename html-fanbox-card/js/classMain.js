@@ -129,11 +129,11 @@ html,body{
 
             cnw.globalCompositeOperation = "source-over"
 
-            img.src = "../images/color-y.png" //颜色
+            img.src = "./images/color-y.png" //颜色
             img.onload = async function () {
                 await tempCtx.drawImage(img, -800 + x * 600, -800 + y * 600, 6280, 3800);
                 tempCtx.globalCompositeOperation = "destination-in";
-                img2.src = "../images/mosaic-1.png" //格子
+                img2.src = "./images/mosaic-1.png" //格子
                 img2.onload = function () {
                     tempCtx.drawImage(img2, 0, 0, 1280, 800);
                     cnw.clearRect(0, 0, cnv.width, cnv.height);
@@ -159,11 +159,11 @@ html,body{
 
            cnw2.globalCompositeOperation = "source-over"
 
-           img.src = "../images/color-x.png" //颜色
+           img.src = "./images/color-x.png" //颜色
            img.onload = async function () {
                await tempCtx.drawImage(img, -800 + x * 600, -800 + y * 600, 6280, 3800);
                tempCtx.globalCompositeOperation = "destination-in";
-               img2.src = "../images/mosaic-2.png" //格子
+               img2.src = "./images/mosaic-2.png" //格子
                img2.onload =function (){
                    tempCtx.drawImage(img2,0, 0,1280,800);
                    cnw2.clearRect(0,0,cnv1.width,cnv1.height);
@@ -191,7 +191,6 @@ html,body{
             gradeTwoImage.restDraw(x,y) //image 1
             gradeThreeImage.restDraw(x,y) //image 2
         })
-
 
     }
 
@@ -226,6 +225,7 @@ html,body{
     }
 class fanBoxCard{
     constructor(setting){
+        // debugger
          mainSetting.entry = setting.entry; //node
          mainSetting.image = setting.image;//image
         ready();
