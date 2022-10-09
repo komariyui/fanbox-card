@@ -1,4 +1,4 @@
-import fanboxCard from "./card/index"
+import fanboxCard,{openCard,closeCard} from "./card/index"
 import { App } from 'vue';
 const components = [fanboxCard];
 const install = (app: App) => {
@@ -6,4 +6,4 @@ const install = (app: App) => {
         app.use(component.install);
     });
 };
-export default {install,fanboxCard, };
+export default {install,fanboxCard,openCard,closeCard};

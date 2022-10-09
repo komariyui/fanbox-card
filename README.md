@@ -10,6 +10,8 @@
 
 <hr/>
 
+#### 原生JS
+
 ```html
  <div id="useBox"></div>
  <script src="./js/classMain.js"></script>
@@ -22,6 +24,16 @@
         }
  </script>
 ```
+
+#### 在vue中使用
+
+1.```npm i vue-fanbox-card```
+2.
+```js
+import fanboxCard from "vue-fanbox-card";
+vue.use(fanboxCard)
+```
+3.
 
 ### License
 

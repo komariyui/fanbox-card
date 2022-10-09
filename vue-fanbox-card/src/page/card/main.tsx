@@ -23,6 +23,8 @@ export default defineComponent({
         })
 
         onMounted(()=>{
+            if (!props.image) throw new Error("image参数是必须传入的");
+
             loadingImageAndDrawImage();
 
             new GradeTwoImage();
