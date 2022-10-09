@@ -1,14 +1,15 @@
 <template>
   <div>
-    <card :show="showS"></card>
-
+    <card :show="isShow"></card>
+    <button @click="openMiaoMiao()">打开</button>
   </div>
 
 </template>
 
 <script lang="ts">
+
 import {defineComponent, ref} from 'vue';
-import card from "../page/card/main";
+import card,{openCard} from "../page/card/main";
 export default defineComponent({
   components:{
     card
@@ -18,13 +19,13 @@ export default defineComponent({
     msg: String,
   },
   setup(){
-    let showS = ref(true);
+    const isShow = ref(true);
+
     return{
       openMiaoMiao(){
-        showS.value = !showS.value;
-        ////
+        openCard();
     },
-    showS
+    isShow
     }
   },
 });

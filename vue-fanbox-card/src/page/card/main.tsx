@@ -1,19 +1,25 @@
 import {defineComponent, onBeforeMount, onMounted, ref, toRef, toRefs, watch, watchEffect,defineEmits} from "vue";
-// import a from "./images/card-image.jpeg";
 import "./main.scss";
 
-
+const isOpen = ref(false);
+export function openCard(){
+    isOpen.value = true;
+}
+export function closeCard(){
+    isOpen.value = false;
+}
 export default defineComponent({
+    name:"fanboxCard",
     props:{
-        image: Promise,
-        show: Boolean
+        image: String,
+        show: Boolean,
     },
     setup(props,ctx){
 
         const {show} = toRefs(props);
-
+        isOpen.value = show.value;
         watch(show,()=>{
-            ////
+            isOpen.value = show.value;
         })
 
         onMounted(()=>{
@@ -26,7 +32,7 @@ export default defineComponent({
         })
 
         const hidden = ():void=>{
-            ////
+            isOpen.value = false;
         }
 
         const mainCardBox = ref<HTMLImageElement>();
@@ -40,7 +46,7 @@ export default defineComponent({
             if (!new2dImg) throw new Error("无法获取到装载dom");
 
             const mainImage:HTMLImageElement = new Image();
-            mainImage.src = require("./images/card-image.jpeg");
+            mainImage.src = String(props.image);
             mainImage.onload =  await function (){
                 new2dImg.drawImage(mainImage,0,0,1280,800);
             }
@@ -72,7 +78,6 @@ export default defineComponent({
 
         //grade two image
         const  GradeTwoImageDom = ref<HTMLCanvasElement>()
-        // eslint-disable-next-line @typescript-eslint/ban-types
         class GradeTwoImage{
              private img = new Image();
              private img2 = new Image();
@@ -155,7 +160,7 @@ export default defineComponent({
              ref={mainCardBox}
              id = "CardMainBox"
              onClick={()=>hidden()}
-             style={{visibility:show.value?"initial":"hidden"}}>
+             style={{visibility:isOpen.value?"initial":"hidden"}}>
             <div id = "main-shadow-image" ref={mainShadowImageBox} style = "transform: perspective(1600px) rotateX(0deg) rotateY(0deg);">
                 <canvas width = "1280" ref={mainShadowImage} height = "800" class = "main-shadow-image" id = "mainShadowImage"></canvas>
                 <canvas width = "1280" ref={GradeTwoImageDom} height = "800" id = "mainShadowBackground-1"></canvas>

@@ -1,7 +1,9 @@
 {
   "name": "vue-fanbox-card",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.5",
+  "license": "MIT",
+  "private": false,
+  "main": "./src/page/index.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
