@@ -6,11 +6,13 @@
 <hr/>
 
 
-### 快速开始
+## 快速开始
+
+
+### 原生JS
 
 <hr/>
 
-#### 原生JS
 
 ```html
  <div id="useBox"></div>
@@ -25,7 +27,10 @@
  </script>
 ```
 
-#### 在vue中使用
+### 在vue中使用(TypeScript)
+
+<hr/>
+
 
 1.
 ```npm i vue-fanbox-card```
@@ -38,7 +43,7 @@ vue.use(fanboxCard)
 
 3.
 
-```js
+```vue
 <fanBoxCard :show="true" :image="require('./xxx.jpg')"></fanBoxCard>
 ```
 
