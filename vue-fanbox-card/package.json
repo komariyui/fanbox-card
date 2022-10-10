@@ -1,6 +1,6 @@
 {
   "name": "vue-fanbox-card",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "license": "MIT",
   "private": false,
   "main": "./src/page/index.ts",
