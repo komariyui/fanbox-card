@@ -27,13 +27,32 @@
 
 #### 在vue中使用
 
-1.```npm i vue-fanbox-card```
+1.
+```npm i vue-fanbox-card```
+
 2.
 ```js
 import fanboxCard from "vue-fanbox-card";
 vue.use(fanboxCard)
 ```
+
 3.
+
+```js
+<fanBoxCard :show="true" :image="require('./xxx.jpg')"></fanBoxCard>
+```
+
+show：是否显示卡片模态框   (Boolean)[可选]<br/>
+image: 卡片使用的图片 (image)[必须]
+
+##### 公开调用函数
+```js
+import {openCard,closeCard} from "@/page/card";
+openCard(); //打开卡片
+closeCard(); //关闭卡片
+```
+
+
 
 ### License
 
