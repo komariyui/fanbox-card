@@ -27,12 +27,12 @@
  </script>
 ```
 
-### 在vue中使用(TypeScript)
+### 在vue中使用
 
 <hr/>
 
 
-1.
+1.TypeScript项目    <br/>
 ```npm i vue-fanbox-card```
 
 2.
