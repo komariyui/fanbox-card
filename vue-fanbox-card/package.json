@@ -1,6 +1,6 @@
 {
   "name": "vue-fanbox-card",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "private": false,
   "main": "lib/fanboxCard.umd.min.js",
