@@ -1,6 +1,10 @@
 跟随鼠标移动的翻转卡片
 ==
+### 介绍
+  这是一个参考了fanbox粉丝卡而重新实现的卡片~！感觉特别适合来做会员卡之类的展示工作。
 
+### 特性
+  还原了fanbox卡片的光膜效果，与卡片透视。
 ### 演示
 [演示demo](http://democard.wuhupoo.cn/)
 <hr/>
@@ -33,7 +37,10 @@
 
 
 1.   <br/>
-```npm i vue-fanbox-card```
+```
+#vue3项目
+npm i vue-fanbox-card
+```
 
 2.
 ```js
