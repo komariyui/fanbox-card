@@ -43,12 +43,22 @@ import "vue-fanbox-card/lib/fanboxCard.css"
 vue.use(fanboxCard)
 ```
 
-3.
+3. ##### (组合式)
 
 ```vue
    const miaomiao =ref(false);
    <button onClick={()=>miaomiao.value = true}>打开模态框</button>
    <fanboxCard show={miaomiao.value} image={require('../card-image.jpeg')} onClick={()=>{miaomiao.value=false}}></fanboxCard>
+```
+4. ##### (选项式)
+```vue
+    data(){
+      return{
+        miao:false
+      }
+    },
+   <button @click="miao = true">打开模态框</button>
+   <fanboxCard :show="miao" :image="require('../FeW7GpIVsAAqlcg.jpg')" @click="miao = false"></fanboxCard>
 ```
 
 show：是否显示卡片模态框   (Boolean,默认false)[可选]<br/>
