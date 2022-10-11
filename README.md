@@ -46,9 +46,9 @@ vue.use(fanboxCard)
 3.
 
 ```vue
-    const miaomiao =ref(false);
+   const miaomiao =ref(false);
    <button onClick={()=>miaomiao.value = true}>打开模态框</button>
-<fanboxCard show={miaomiao.value} image={require('../card-image.jpeg')} onClick={()=>{miaomiao.value=false}}></fanboxCard>
+   <fanboxCard show={miaomiao.value} image={require('../card-image.jpeg')} onClick={()=>{miaomiao.value=false}}></fanboxCard>
 ```
 
 show：是否显示卡片模态框   (Boolean,默认false)[可选]<br/>
