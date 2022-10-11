@@ -5,7 +5,6 @@
 ### 介绍
   这是一个参考了fanbox粉丝卡而重新实现的卡片~！感觉特别适合来做会员卡之类的展示卡片工作。
 
-<hr/>
 
 ### 特性
   1.还原了fanbox卡片的彩色光膜效果<br/>
@@ -13,7 +12,6 @@
   3.简单易用
 ### 演示
 
-<hr/>
 
 [演示demo](http://democard.wuhupoo.cn/)
 
@@ -25,7 +23,6 @@
 
 ### 原生JS
 
-<hr/>
 
 
 ```html
@@ -43,7 +40,6 @@
 
 ### 在vue中使用(--vue3)
 
-<hr/>
 
 
 1.   <br/>
@@ -83,10 +79,11 @@ image: 卡片使用的图片 (image)[必须]
 
 
 
+<Hr/>
 
 ### License
 
-<Hr/>
+
 MIT
 <br/>
 Copyright (c) 2022-present 由白子
