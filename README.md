@@ -1,5 +1,9 @@
+
 跟随鼠标移动的翻转卡片
 ==
+
+<br/>
+
 <hr/>
 
 ### 介绍
@@ -22,6 +26,8 @@
 
 
 ### 原生JS
+
+#### 必须有一个dom来装载卡片,在这里是useBox，并且创建实例前传入id。
 
 
 
@@ -74,8 +80,8 @@ vue.use(fanboxCard)
    <fanboxCard :show="miao" :image="require('../FeW7GpIVsAAqlcg.jpg')" @click="miao = false"></fanboxCard>
 ```
 
-show：是否显示卡片模态框   (Boolean,默认false)[可选]<br/>
-image: 卡片使用的图片 (image)[必须]
+#### show：是否显示卡片模态框   (Boolean,默认false)[可选]<br/>
+#### image: 卡片使用的图片 (image)[必须]
 
 
 
