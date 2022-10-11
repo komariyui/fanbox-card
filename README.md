@@ -54,6 +54,7 @@ npm i vue-fanbox-card
 
 2.
 ```js
+//全局引入
 import fanboxCard from "vue-fanbox-card";
 import "vue-fanbox-card/lib/fanboxCard.css"
 
@@ -75,7 +76,7 @@ vue.use(fanboxCard)
       }
     },
    <button @click="miao = true">打开模态框</button>
-   <fanboxCard :show="miao" :image="require('../FeW7GpIVsAAqlcg.jpg')" @click="miao = false"></fanboxCard>
+   <fanboxCard :show="miao" :image="require('../card-image.jpeg')" @click="miao = false"></fanboxCard>
 ```
 
 #### show：是否显示卡片模态框   (Boolean,默认false)[可选]<br/>
