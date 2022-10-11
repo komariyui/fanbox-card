@@ -1,5 +1,5 @@
 import { defineComponent, ref } from 'vue';
-import fanboxCard,{openCard,closeCard} from "@/page/card";
+import {openCard,closeCard} from "@/page/card";
 
 export default defineComponent({
   setup() {
@@ -12,7 +12,7 @@ export default defineComponent({
     return () => (
         <div>
           <button onClick={()=>openMiao()}>打开模态框</button>
-          <fanboxCard show={miaomiao} ></fanboxCard>
+          <fanboxCard show={true} image={require('../card-image.jpeg')}></fanboxCard>
         </div>
    )
   },

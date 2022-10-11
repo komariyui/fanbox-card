@@ -1,16 +1,19 @@
 {
   "name": "vue-fanbox-card",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "license": "MIT",
   "private": false,
-  "main": "./src/page/index.ts",
+  "main": "lib/fanboxCard.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-lib": "vue-cli-service build --target lib --name fanboxCard --dest lib src/page/index.ts"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1",
     "vue": "^3.2.13"
   },
   "devDependencies": {
