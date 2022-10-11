@@ -38,9 +38,9 @@ export default defineComponent({
 
 
 
-        const hidden = ():void=>{
-            isOpen.value = false;
-        }
+        // const hidden = ():void=>{
+        //     isOpen.value = false;
+        // }
 
         const mainCardBox = ref<HTMLImageElement>();
 
@@ -166,8 +166,7 @@ export default defineComponent({
         <div class = "main-shadow"
              ref={mainCardBox}
              id = "CardMainBox"
-             onClick={()=>hidden()}
-             style={{visibility:isOpen.value?"initial":"hidden"}}>
+             style={{visibility:show.value?"initial":"hidden"}}>
             <div id = "main-shadow-image" ref={mainShadowImageBox} style = "transform: perspective(1600px) rotateX(0deg) rotateY(0deg);">
                 <canvas width = "1280" ref={mainShadowImage} height = "800" class = "main-shadow-image" id = "mainShadowImage"></canvas>
                 <canvas width = "1280" ref={GradeTwoImageDom} height = "800" id = "mainShadowBackground-1"></canvas>
