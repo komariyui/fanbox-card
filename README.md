@@ -55,33 +55,62 @@ npm i vue-fanbox-card
 2.
 ```js
 //全局引入
-import fanboxCard from "vue-fanbox-card";
-import "vue-fanbox-card/lib/fanboxCard.css"
+import { createApp } from 'vue'
+import App from './App.vue'
 
-vue.use(fanboxCard)
+import fanboxCard from "vue-fanbox-card"; //引入核心
+import "vue-fanbox-card/lib/fanboxCard.css" //引入fanbox的css样式
+
+const app = createApp(App);
+app.use(fanboxCard); //全局使用fanboxCard
+app.mount('#app');
+
 ```
 
-3. ##### (组合式 多数是在用tsx或者jsx的情况下)
-
+4. ##### (.VUE )
 ```vue
-   const miaomiao =ref(false);
-   <button onClick={()=>miaomiao.value = true}>打开模态框</button>
-   <fanboxCard show={miaomiao.value} image={require('../card-image.jpeg')} onClick={()=>{miaomiao.value=false}}></fanboxCard>
-```
-4. ##### (选项式 常用的写法)
-```vue
-    data(){
-      return{
-        miao:false
-      }
-    },
-   <button @click="miao = true">打开模态框</button>
-   <fanboxCard :show="miao" :image="require('../card-image.jpeg')" @click="miao = false"></fanboxCard>
+
+<template>
+<button @click="miao = true">打开模态框</button>
+<fanboxCard :show="miao" :image="require('../card-image.jpeg')" @click="miao = false"></fanboxCard>
+</template>
+
+<script>
+export default {
+  data(){
+    return{
+      miao:false
+    }
+  },
+}
+</script>
 ```
 
-#### show：是否显示卡片模态框   (Boolean,默认false)[可选]<br/>
-#### image: 卡片使用的图片 (image)[必须]
+3. ##### (.JSX/.TSX)
 
+```js
+
+export default defineComponent({
+setup() {
+const miaomiao =ref(false);
+return () => (
+    <div>
+         <button onClick={()=>openMiao()}>打开模态框</button>
+        <fanboxCard show={miaomiao.value} image={require('../card-image.jpeg')} onClick={()=>{miaomiao.value=false}}></fanboxCard>
+    </div>
+            )
+        },
+    });
+
+```
+
+
+#### 参数简介：
+
+ | 参数名 | 数据类型           | 是否可选|描述
+ |----------------|------|----|------|
+ | show   | Boolean        |是|是否显示图片模态框
+ | image | String/(require) |否|卡片需要使用到的图片
 
 
 <Hr/>
