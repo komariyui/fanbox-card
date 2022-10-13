@@ -47,7 +47,8 @@
 
 
 1.   <br/>
-```
+
+```cookie
 #vue3项目
 npm i vue-fanbox-card
 ```
@@ -88,7 +89,7 @@ export default {
 
 3. ##### (.JSX/.TSX)
 
-```js
+```tsx
 
 export default defineComponent({
 setup() {
