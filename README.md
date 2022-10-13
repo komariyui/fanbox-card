@@ -61,14 +61,14 @@ import "vue-fanbox-card/lib/fanboxCard.css"
 vue.use(fanboxCard)
 ```
 
-3. ##### (组合式)
+3. ##### (组合式 多数是在用tsx或者jsx的情况下)
 
 ```vue
    const miaomiao =ref(false);
    <button onClick={()=>miaomiao.value = true}>打开模态框</button>
    <fanboxCard show={miaomiao.value} image={require('../card-image.jpeg')} onClick={()=>{miaomiao.value=false}}></fanboxCard>
 ```
-4. ##### (选项式)
+4. ##### (选项式 常用的写法)
 ```vue
     data(){
       return{
