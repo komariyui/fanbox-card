@@ -12,32 +12,32 @@
         <span class="pink-button" id="openCard">打开 fanbox卡片</span>
     </div>
 
-    <div id="useBox"></div>
-    <script src="./js/classMain.js"></script>
-    <script>
-        window.onload = function (){
-            const fanBoxCardFun = new fanBoxCard({
-                entry:"useBox",
-                image:"./images/card-image.jpeg"
-            })
+<!--    <div id="useBox"></div>-->
+<!--    <script src="./js/classMain.js"></script>-->
+<!--    <script>-->
+<!--        window.onload = function (){-->
+<!--            const fanBoxCardFun = new fanBoxCard({-->
+<!--                entry:"useBox",-->
+<!--                image:"./images/card-image.jpeg"-->
+<!--            })-->
 
-            document.getElementById("openCard").onclick = ()=>{
-                fanBoxCardFun.openFanBoxCard();
-            }
-        }
-    </script>
-<!--    <div class="main-shadow" id="CardMainBox">-->
-<!--        <div id="main-shadow-image" style="transform: perspective(1600px) rotateX(0deg) rotateY(0deg);">-->
-<!--&lt;!&ndash;            <img class="main-shadow-scatter" src="./images/mosaic-1.png" alt = "scatter">&ndash;&gt;-->
-<!--&lt;!&ndash;            <img class="main-shadow-color" src = "./images/color-y.png" alt = "color">&ndash;&gt;-->
-<!--&lt;!&ndash;            <img class="main-shadow-image" src = "./images/card-image.jpeg" alt = "card-image">&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="main-shadow-mask">1</div>&ndash;&gt;-->
-<!--            <canvas width="1280" height="800" class="main-shadow-image" id="mainShadowImage"></canvas>-->
-<!--            <canvas width="1280" height="800" id="mainShadowBackground-1"></canvas>-->
-<!--            <canvas width="1280" height="800" id="mainShadowBackground"></canvas>-->
+<!--            document.getElementById("openCard").onclick = ()=>{-->
+<!--                fanBoxCardFun.openFanBoxCard();-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+    <div class="main-shadow" id="CardMainBox">
+        <div id="main-shadow-image" style="transform: perspective(1600px) rotateX(0deg) rotateY(0deg);">
+<!--            <img class="main-shadow-scatter" src="./images/mosaic-1.png" alt = "scatter">-->
+<!--            <img class="main-shadow-color" src = "./images/color-y.png" alt = "color">-->
+<!--            <img class="main-shadow-image" src = "./images/card-image.jpeg" alt = "card-image">-->
+<!--            <div class="main-shadow-mask">1</div>-->
+            <canvas width="1280" height="800" class="main-shadow-image" id="mainShadowImage"></canvas>
+            <canvas width="1280" height="800" id="mainShadowBackground-1"></canvas>
+            <canvas width="1280" height="800" id="mainShadowBackground"></canvas>
 
-<!--        </div>-->
-<!--    </div>-->
-<!--    <script src = "./js/main.js"></script>-->
+        </div>
+    </div>
+    <script src = "./js/main.js"></script>
 </body>
 </html>
