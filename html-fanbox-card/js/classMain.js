@@ -1,5 +1,5 @@
 /*
-* version: 1.0.0
+* version: 1.0.1
 * author: 由白
 * reference resources: https://www.fanbox.cc/creators/supporting
 * */
@@ -112,75 +112,82 @@ html,body{
     }
 
 
+    //注意：此处有关联ready
+    let restDrawOne,restDrawTwo;
 
     //grade two image
-    function GradeTwoImage(){
-        let img = new Image();
-        let img2 = new Image();
-        const cnv = document.getElementById('mainShadowBackground');
-        const cnw = cnv.getContext('2d')
+    const restDrawMainY= (function (){
+        let img = new Image()
+        let img2 = new Image()
 
-        this.restDraw = function restDraw(x,y) {
-
-            const tempCanvas = document.createElement('canvas'); // Storage canvas
-            const tempCtx = tempCanvas.getContext('2d');
-            tempCanvas.width = 1280;
-            tempCanvas.height = 800; // 设置宽高
-
-            cnw.globalCompositeOperation = "source-over"
-
-            img.src = "./images/color-y.png" //颜色
-            img.onload = async function () {
-                await tempCtx.drawImage(img, -800 + x * 600, -800 + y * 600, 6280, 3800);
-                tempCtx.globalCompositeOperation = "destination-in";
-                img2.src = "./images/mosaic-1.png" //格子
-                img2.onload = function () {
-                    tempCtx.drawImage(img2, 0, 0, 1280, 800);
-                    cnw.clearRect(0, 0, cnv.width, cnv.height);
-                    cnw.drawImage(tempCanvas, 0, 0);
+        let cnv,cnw;
+        return class project{
+            constructor(x,y){
+                cnv = document.getElementById('mainShadowBackground');
+                cnw = cnv.getContext('2d');
+                img.src = "./images/color-y.png" //颜色
+                img.onload = async () =>{
+                    img2.src = "./images/mosaic-1.png" //格子
+                    img2.onload =()=>{
+                        this.restDraw(x,y);  //完成初始化加载并调用
+                    }
                 }
-
             }
+            restDraw(x,y){
+                const tempCanvas = document.createElement('canvas'); // Storage canvas
+                const tempCtx = tempCanvas.getContext('2d');
+                tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
+
+                cnw.globalCompositeOperation = "source-over"
+
+                tempCtx.drawImage(img,-800+x*600, -800+y*600,6280,3800);
+                tempCtx.globalCompositeOperation = "destination-in";
+
+                tempCtx.drawImage(img2,0, 0,1280,800);
+                cnw.clearRect(0,0,cnv.width,cnv.height);
+                cnw.drawImage(tempCanvas,0,0);
+            };
         }
-        this.restDraw(0,0);
-    }
+    })();
 
     //grade three image
-   function GradeThreeImage(){
-       let img = new Image();
-       let img2 = new Image();
-       const cnv1 = document.getElementById('mainShadowBackground-1');
-       const cnw2 = cnv1.getContext('2d')
+    const restDrawMainX=(function (){
+        let img = new Image()
+        let img2 = new Image()
+        let cnv,cnw;
+        return class project{
+            constructor(x,y){
+                cnv = document.getElementById('mainShadowBackground-1');
+                cnw = cnv.getContext('2d');
+                img.src = "./images/color-x.png" //颜色
+                img.onload = async  () =>{
+                    img2.src = "./images/mosaic-2.png" //格子
+                    img2.onload =()=>{
+                        this.restDraw(x,y)
+                    }
+                }
+            }
+            restDraw(x,y){
+                const tempCanvas = document.createElement('canvas'); //Storage canvas
+                const tempCtx = tempCanvas.getContext('2d');
 
-       this.restDraw = function restDraw(x,y){
-           const tempCanvas = document.createElement('canvas'); // Storage canvas
-           const tempCtx = tempCanvas.getContext('2d');
-           tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
+                tempCanvas.width = 1280; tempCanvas.height = 800; // 设置宽高
+                cnw.globalCompositeOperation = "source-over"
 
-           cnw2.globalCompositeOperation = "source-over"
+                tempCtx.drawImage(img,-800+x*600, -800+y*600,6280,3800);
+                tempCtx.globalCompositeOperation = "destination-in";
 
-           img.src = "./images/color-x.png" //颜色
-           img.onload = async function () {
-               await tempCtx.drawImage(img, -800 + x * 600, -800 + y * 600, 6280, 3800);
-               tempCtx.globalCompositeOperation = "destination-in";
-               img2.src = "./images/mosaic-2.png" //格子
-               img2.onload =function (){
-                   tempCtx.drawImage(img2,0, 0,1280,800);
-                   cnw2.clearRect(0,0,cnv1.width,cnv1.height);
-                   cnw2.drawImage(tempCanvas,0,0);
-               }
-           }
-       };
-       this.restDraw(0,0);
-   }
+                tempCtx.drawImage(img2,0, 0,1280,800);
+                cnw.clearRect(0,0,cnv.width,cnv.height);
+                cnw.drawImage(tempCanvas,0,0);
+
+            };
+        }
+    })();
+
 
 
     function bindDom(){
-        //image 1
-        const gradeTwoImage = new GradeTwoImage();
-        //image 2
-        const gradeThreeImage = new GradeThreeImage();
-
         let cardMainBoxDom = document.getElementById("CardMainBox");
         const coreX = cardMainBoxDom.offsetWidth/2;
         const coreY = cardMainBoxDom.offsetHeight/2;
@@ -188,8 +195,8 @@ html,body{
             let x = (event.clientX-coreX)/coreX;
             let y = (event.clientY-coreY)/coreY;
             document.getElementById("main-shadow-image").style.transform = `perspective(${x+1600}px) rotateX(${y*21}deg) rotateY(${(x*18)>0?-(x*18):Math.abs(x*18)}deg) `;
-            gradeTwoImage.restDraw(x,y) //image 1
-            gradeThreeImage.restDraw(x,y) //image 2
+            restDrawOne.restDraw(x,y) //image 1
+            restDrawTwo.restDraw(x,y) //image 2
         })
 
     }
@@ -211,9 +218,13 @@ html,body{
         if(parameterCheck())// check parameter
             await initializationFanBoxCard(); //initialization FanBox card
 
-        await loadingImageAndDrawImage();
-        await new GradeTwoImage();
-        await new GradeThreeImage();
+        await loadingImageAndDrawImage().then(()=>{
+            //image 1
+            restDrawOne = new restDrawMainY(0,0) //初始化 Y
+            //image 2
+            restDrawTwo = new restDrawMainX(0,0) //初始化 X
+        });
+
 
         bindDom();
 
